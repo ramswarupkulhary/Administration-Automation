@@ -1,0 +1,542 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1308.8,4870.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="42">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1319.2,4705.6" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="Data" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[Data]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\kulha\Desktop\MATHEMATICS.csv" sap:VirtualizedContainerService.HintSize="1277.6,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[Data]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1277.6,4417.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="data" />
+          </ActivityAction.Argument>
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1228,4268.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" Url="http://slams.herokuapp.com/">
+            <ui:OpenBrowser.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1194.4,4166.4" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="1152.8,4073.6" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="1111.2,3980.8" sap2010:WorkflowViewState.IdRef="BrowserScope_20" InformativeScreenshot="ed57571a5c429ee10c8de8501829202e" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                      <ui:BrowserScope.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1077.6,3833.6" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'H6'" sap:VirtualizedContainerService.HintSize="1036,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition OffsetX="64" OffsetY="17" Position="TopLeft" />
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f337c741-69aa-4802-88e1-13415c7463d4" InformativeScreenshot="1f05fe26d75b2366436bcc3810af521a" Selector="&lt;webctrl aaname=' Add Fcaulty Member' tag='H6' /&gt;" WaitForReady="COMPLETE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1036,3531.2" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="sd:DataTable" Name="Details" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  name'" sap:VirtualizedContainerService.HintSize="994.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[data(&quot;Name&quot;).ToString]">
+                                <ui:TypeInto.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84e09b82-fca1-4eed-b83e-c519beda6f13" InformativeScreenshot="b81b3eed12c4f656bcfacf46e5ea904b" Selector="&lt;webctrl id='name' tag='INPUT' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:TypeInto.Target>
+                              </ui:TypeInto>
+                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  fid'" sap:VirtualizedContainerService.HintSize="994.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[data(&quot;F. Id&quot;).ToString]">
+                                <ui:TypeInto.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84e09b82-fca1-4eed-b83e-c519beda6f13" InformativeScreenshot="b89e4753617e4566be8da3f7fe4a3ced" Selector="&lt;webctrl id='fid' tag='INPUT' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:TypeInto.Target>
+                              </ui:TypeInto>
+                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  email'" sap:VirtualizedContainerService.HintSize="994.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[data(&quot;Email&quot;).ToString]">
+                                <ui:TypeInto.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84e09b82-fca1-4eed-b83e-c519beda6f13" InformativeScreenshot="2d8f5cf08732b71a7b12f7236fec811c" Selector="&lt;webctrl id='email' tag='INPUT' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:TypeInto.Target>
+                              </ui:TypeInto>
+                              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  mobile'" sap:VirtualizedContainerService.HintSize="994.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[data(&quot;Mobile&quot;).ToString]">
+                                <ui:TypeInto.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84e09b82-fca1-4eed-b83e-c519beda6f13" InformativeScreenshot="28b7ff7dc4ce010a124c611263347675" Selector="&lt;webctrl id='mobile' tag='INPUT' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:TypeInto.Target>
+                              </ui:TypeInto>
+                              <If Condition="[(data(&quot; H.O.D&quot;).ToString).Equals(&quot;Yes&quot;)]" sap:VirtualizedContainerService.HintSize="994.4,617.6" sap2010:WorkflowViewState.IdRef="If_5">
+                                <If.Then>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_12" InformativeScreenshot="d03986ccd72ed545c1e44c12e150a41f" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_9" Item="Yes -- Head Of Department">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she HOD</x:String>
+                                                  <x:String>Yes -- Head Of Department</x:String>
+                                                  <x:String>No -- Head Of Department</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b9de4bcb-37f2-4438-afeb-c76d69c97ad5" InformativeScreenshot="e4c67ccab70e702f6b41a66da151e1cc" Selector="&lt;webctrl id='temp' name='hod' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_13" InformativeScreenshot="4c4f18576c31bf457c8dc8a3a54a8a3b" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_10" Item="No -- Head Of Department">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she HOD</x:String>
+                                                  <x:String>Yes -- Head Of Department</x:String>
+                                                  <x:String>No -- Head Of Department</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="068ecc07-646c-4cb1-93e9-9cd48dac9e43" InformativeScreenshot="ee4c6a0c1ffded18ff02384986b6481e" Selector="&lt;webctrl id='temp' name='hod' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <If Condition="[(data(&quot;  Faculty Advisor&quot;).ToString).Equals(&quot;Yes&quot;)]" sap:VirtualizedContainerService.HintSize="994.4,617.6" sap2010:WorkflowViewState.IdRef="If_6">
+                                <If.Then>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_14" InformativeScreenshot="60f97c144a38b9b9be177c7e84fea527" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_11" Item="Yes -- Faculty Advisor">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she Faculty Advisor</x:String>
+                                                  <x:String>Yes -- Faculty Advisor</x:String>
+                                                  <x:String>No -- Faculty Advisor</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e3c6af9d-3750-41af-95c3-d00b993e33e9" InformativeScreenshot="0ae16069fee0d7a749dd2dd6657492d3" Selector="&lt;webctrl id='temp' name='fa' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_15" InformativeScreenshot="534aee3fd63369026f645be8cb7bddd1" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_12" Item="No -- Faculty Advisor">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she Faculty Advisor</x:String>
+                                                  <x:String>Yes -- Faculty Advisor</x:String>
+                                                  <x:String>No -- Faculty Advisor</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="962e0d6f-7351-4299-b03a-9875cfd9c745" InformativeScreenshot="4aaa830b74ac0ec687f9d81c7e192f8c" Selector="&lt;webctrl id='temp' name='fa' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <If Condition="[(data(&quot;Programme Coordinator&quot;).ToString).Equals(&quot;Yes&quot;)]" sap:VirtualizedContainerService.HintSize="994.4,617.6" sap2010:WorkflowViewState.IdRef="If_7">
+                                <If.Then>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_16" InformativeScreenshot="f3064fc7062ab223f94243675d54af67" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_13" Item="Yes -- Program Coordinator">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she Program Coordinator</x:String>
+                                                  <x:String>Yes -- Program Coordinator</x:String>
+                                                  <x:String>No -- Program Coordinator</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5d6d1ccc-3ebf-40e1-ba26-0fce6b1ba44a" InformativeScreenshot="5d0b19c001b734e5438aa851eff94952" Selector="&lt;webctrl id='temp' name='pc' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_17" InformativeScreenshot="969886d2250c7087980f5ae8fb8ef66e" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_14" Item="No -- Program Coordinator">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she Program Coordinator</x:String>
+                                                  <x:String>Yes -- Program Coordinator</x:String>
+                                                  <x:String>No -- Program Coordinator</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e06d559c-f978-4975-ad9c-6017e2cbcd2d" InformativeScreenshot="364b6138644af1e5deab43f8d95eb12d" Selector="&lt;webctrl id='temp' name='pc' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <If Condition="[(data(&quot;Project Guide&quot;).ToString).Equals(&quot;Yes&quot;)]" sap:VirtualizedContainerService.HintSize="994.4,617.6" sap2010:WorkflowViewState.IdRef="If_8">
+                                <If.Then>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_18" InformativeScreenshot="742da85a314db9ac0b6fe5ea148d8edf" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_15" Item="Yes -- Project Guide">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she Project Guide</x:String>
+                                                  <x:String>Yes -- Project Guide</x:String>
+                                                  <x:String>No -- Project Guide</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1dd1cd6d-db49-4676-9bff-6e110f89ee60" InformativeScreenshot="7a86af4e3e256b5d3aa0fbbb7deb4337" Selector="&lt;webctrl id='temp' name='pg' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="475.2,468" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SLAMS Page'" sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="BrowserScope_19" InformativeScreenshot="1e45b1c3013c6a086003b2e990411f21" Selector="&lt;html app='chrome.exe' title='SLAMS' /&gt;">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  temp'" sap:VirtualizedContainerService.HintSize="358.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_16" Item="No -- Project Guide">
+                                              <ui:SelectItem.Items>
+                                                <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                  <x:String>* Is he/she Project Guide</x:String>
+                                                  <x:String>Yes -- Project Guide</x:String>
+                                                  <x:String>No -- Project Guide</x:String>
+                                                </scg:List>
+                                              </ui:SelectItem.Items>
+                                              <ui:SelectItem.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4283ee12-555a-42f6-aa68-4f5b48561ce8" InformativeScreenshot="5e4793f33998737ed12665bb786df7e4" Selector="&lt;webctrl id='temp' name='pg' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                                                  <ui:Target.TimeoutMS>
+                                                    <InArgument x:TypeArguments="x:Int32" />
+                                                  </ui:Target.TimeoutMS>
+                                                </ui:Target>
+                                              </ui:SelectItem.Target>
+                                            </ui:SelectItem>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="994.4,107.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2c29de05-0e6d-408a-995e-c044d74e11a5" InformativeScreenshot="420a8d859cfac1c45574022531630468" Selector="&lt;webctrl tag='BUTTON' type='submit' /&gt;">
+                                    <ui:Target.TimeoutMS>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:Target.TimeoutMS>
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:Click.Target>
+                              </ui:Click>
+                            </Sequence>
+                            <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="1036,22.4" sap2010:WorkflowViewState.IdRef="CloseTab_7" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:BrowserScope.Body>
+                    </ui:BrowserScope>
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </ui:OpenBrowser.Body>
+          </ui:OpenBrowser>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>
